@@ -395,20 +395,20 @@ function endTouch(e) {
  }
  
  function permission () {
-	 console.log(typeof( DeviceMotionEvent ));
-    if ( typeof( DeviceMotionEvent ) !== "undefined" && typeof( DeviceMotionEvent.requestPermission ) === "function" ) {
+	 console.log(typeof( DeviceOrientationEvent  ));
+    if ( typeof( DeviceOrientationEvent ) !== "undefined" && typeof( DeviceOrientationEvent .requestPermission ) === "function" ) {
         // (optional) Do something before API request prompt.
-        DeviceMotionEvent.requestPermission()
+        DeviceOrientationEvent.requestPermission()
             .then( response => {
             // (optional) Do something after API prompt dismissed.
             if ( response == "granted" ) {
-                window.addEventListener( "devicemotion", (e) => {
+                window.addEventListener( "deviceorientation", (e) => {
                     console.log("sdasd");
                 })
             }
         })
             .catch( console.error )
     } else {
-        alert( "DeviceMotionEvent is not defined" );
+        alert( "DeviceOrientationEvent  is not defined" );
     }
 }
