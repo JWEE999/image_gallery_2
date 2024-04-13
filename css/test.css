@@ -124,6 +124,7 @@ img {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  touch-action: none;
   --img_preview_current_location: 0px;
   --img_preview_end_location: 0px;
 }
