@@ -361,11 +361,11 @@ function endTouch(e) {
   }
 
   function moveTouch(e){
-      e.preventDefault()
-	  if (in_preview_mode===true){
-		current_X_pos = e.touches[0].clientX - initialX;
-		document.getElementById("mySlides_"+slideIndex).style.setProperty('left', current_X_pos +"px");
-	  }
+      e.preventDefault();
+	  //if (in_preview_mode===true){
+		//current_X_pos = e.touches[0].clientX - initialX;
+		//document.getElementById("mySlides_"+slideIndex).style.setProperty('left', current_X_pos +"px");
+	  //}
   }
   
   function plusslide(){
