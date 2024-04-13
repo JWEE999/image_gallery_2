@@ -394,14 +394,21 @@ function endTouch(e) {
 	plusSlides(-1);
  }
  
- function requestOrientationPermission(){
-        DeviceOrientationEvent.requestPermission()
-        .then(response => {
-            if (response == 'granted') {
-                window.addEventListener('deviceorientation', (e) => {
-                    // do something with e
+ function permission () {
+	 console.log(typeof( DeviceMotionEvent ));
+    if ( typeof( DeviceMotionEvent ) !== "undefined" && typeof( DeviceMotionEvent.requestPermission ) === "function" ) {
+        // (optional) Do something before API request prompt.
+        DeviceMotionEvent.requestPermission()
+            .then( response => {
+            // (optional) Do something after API prompt dismissed.
+            if ( response == "granted" ) {
+                window.addEventListener( "devicemotion", (e) => {
+                    console.log("sdasd");
                 })
             }
         })
-        .catch(console.error)
+            .catch( console.error )
+    } else {
+        alert( "DeviceMotionEvent is not defined" );
     }
+}
