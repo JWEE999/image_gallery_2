@@ -329,7 +329,7 @@ function endTouch(e) {
 	  if (in_preview_mode===true){
 		document.getElementById("mySlides_"+slideIndex).style.setProperty("--img_preview_current_location", (endX-initialX)+"px");
 		document.getElementById("mySlides_"+slideIndex).style.setProperty('animation', "");
-		document.getElementById("mySlides_"+slideIndex).style.setProperty('animation', "image_preview_move_back_original_location 0.5s forwards");
+		document.getElementById("mySlides_"+slideIndex).style.setProperty('animation', "image_preview_move_back_original_location 0.2s forwards");
 		setTimeout(reset_image_preview_position, 200);
 	  }
 	}
@@ -347,14 +347,14 @@ function endTouch(e) {
       // Swipe right
       if(endX - initialX < -50){
 		  document.getElementById("mySlides_"+slideIndex).style.setProperty('animation', "");
-		  document.getElementById("mySlides_"+slideIndex).style.setProperty('animation', "image_preview_move_right 0.5s forwards");
+		  document.getElementById("mySlides_"+slideIndex).style.setProperty('animation', "image_preview_move_right 0.2s forwards");
 		  setTimeout(plusslide, 200);
       
       }
 	  // Swipe left
 	  if(endX - initialX > 50){
 		  document.getElementById("mySlides_"+slideIndex).style.setProperty('animation', "");
-		  document.getElementById("mySlides_"+slideIndex).style.setProperty('animation', "image_preview_move_left 0.5s forwards");
+		  document.getElementById("mySlides_"+slideIndex).style.setProperty('animation', "image_preview_move_left 0.2s forwards");
 		  setTimeout(minusslide, 200);
       }
 	  
@@ -362,10 +362,10 @@ function endTouch(e) {
 
   function moveTouch(e){
       e.preventDefault();
-	  //if (in_preview_mode===true){
-		//current_X_pos = e.touches[0].clientX - initialX;
-		//document.getElementById("mySlides_"+slideIndex).style.setProperty('left', current_X_pos +"px");
-	  //}
+	  if (in_preview_mode===true){
+		current_X_pos = e.touches[0].clientX - initialX;
+		document.getElementById("mySlides_"+slideIndex).style.setProperty('left', current_X_pos +"px");
+	  }
   }
   
   function plusslide(){
@@ -377,7 +377,7 @@ function endTouch(e) {
 		nextSlideIndex=slideIndex+1;
 	}
 	document.getElementById("mySlides_"+nextSlideIndex).style.setProperty('animation', "");
-	document.getElementById("mySlides_"+nextSlideIndex).style.setProperty('animation', "image_preview_appear_from_small 0.5s forwards");
+	document.getElementById("mySlides_"+nextSlideIndex).style.setProperty('animation', "image_preview_appear_from_small 0.2s forwards");
 	plusSlides(1);
   }
   
@@ -390,6 +390,6 @@ function endTouch(e) {
 		nextSlideIndex = slideIndex-1;
 	}
 	document.getElementById("mySlides_"+nextSlideIndex).style.setProperty('animation', "");
-	document.getElementById("mySlides_"+nextSlideIndex).style.setProperty('animation', "image_preview_appear_from_small 0.5s forwards");
+	document.getElementById("mySlides_"+nextSlideIndex).style.setProperty('animation', "image_preview_appear_from_small 0.2s forwards");
 	plusSlides(-1);
  }
