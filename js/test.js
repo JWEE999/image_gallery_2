@@ -393,3 +393,15 @@ function endTouch(e) {
 	document.getElementById("mySlides_"+nextSlideIndex).style.setProperty('animation', "image_preview_appear_from_small 0.2s forwards");
 	plusSlides(-1);
  }
+ 
+ function requestOrientationPermission(){
+        DeviceOrientationEvent.requestPermission()
+        .then(response => {
+            if (response == 'granted') {
+                window.addEventListener('deviceorientation', (e) => {
+                    // do something with e
+                })
+            }
+        })
+        .catch(console.error)
+    }
