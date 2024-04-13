@@ -330,7 +330,7 @@ function endTouch(e) {
 		document.getElementById("mySlides_"+slideIndex).style.setProperty("--img_preview_current_location", (endX-initialX)+"px");
 		document.getElementById("mySlides_"+slideIndex).style.setProperty('animation', "");
 		document.getElementById("mySlides_"+slideIndex).style.setProperty('animation', "image_preview_move_back_original_location 0.5s forwards");
-		setTimeout(reset_image_preview_position, 500);
+		setTimeout(reset_image_preview_position, 200);
 	  }
 	}
 }
@@ -348,20 +348,20 @@ function endTouch(e) {
       if(endX - initialX < -50){
 		  document.getElementById("mySlides_"+slideIndex).style.setProperty('animation', "");
 		  document.getElementById("mySlides_"+slideIndex).style.setProperty('animation', "image_preview_move_right 0.5s forwards");
-		  setTimeout(plusslide, 500);
+		  setTimeout(plusslide, 200);
       
       }
 	  // Swipe left
 	  if(endX - initialX > 50){
 		  document.getElementById("mySlides_"+slideIndex).style.setProperty('animation', "");
 		  document.getElementById("mySlides_"+slideIndex).style.setProperty('animation', "image_preview_move_left 0.5s forwards");
-		  setTimeout(minusslide, 500);
+		  setTimeout(minusslide, 200);
       }
 	  
   }
 
   function moveTouch(e){
-      //e.preventDefault()
+      e.preventDefault()
 	  if (in_preview_mode===true){
 		current_X_pos = e.touches[0].clientX - initialX;
 		document.getElementById("mySlides_"+slideIndex).style.setProperty('left', current_X_pos +"px");
