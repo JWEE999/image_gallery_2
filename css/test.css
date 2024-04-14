@@ -242,42 +242,31 @@ img {
 }
 
 .active{
-  opacity: 1;
   animation: thumbnail-selection 0.5s forwards;
   -webkit-animation: thumbnail-selection 0.5s forwards;
 }
 
 .not_active{
-	position: relative;
-	width: 21%;
-	height: 100%;
-	margin-left: 0.2%;
-	margin-right: 0.2%;
-	overflow: hidden;
-	border-radius: 10px;
-	display:inline-block;
-	vertical-align: top;
-	opacity:0.6;
 	animation: thumbnail-deselection 0.5s forwards;
 	-webkit-animation: thumbnail-deselection 0.5s forwards;
 }
 
 @keyframes thumbnail-selection {
-0%{  transform: translateY(0px); overflow: hidden;  }
-100% {  transform: translateY(-30%); overflow: hidden; }
+0%{  transform: translateY(0px); overflow: hidden;  opacity: 1; }
+100% {  transform: translateY(-30%); overflow: hidden; opacity: 1; }
 }
 @-webkit-keyframes thumbnail-selection {
-0%{  -webkit-transform: translateY(0px); overflow: hidden; }
-100% {  -webkit-transform: translateY(-30%); overflow: hidden; }
+0%{  -webkit-transform: translateY(0px); overflow: hidden; opacity: 1; }
+100% {  -webkit-transform: translateY(-30%); overflow: hidden; opacity: 1; }
 }
 
 @keyframes thumbnail-deselection {
-0%{  transform: translateY(-30%); overflow: hidden; }
-100% {  transform: translateY(0px); overflow: hidden; }
+0%{  transform: translateY(-30%); overflow: hidden; opacity: 0.6; }
+100% {  transform: translateY(0px); overflow: hidden; opacity: 0.6; }
 }
 @-webkit-keyframes thumbnail-deselection {
-0%{  -webkit-transform: translateY(-30%); overflow: hidden; }
-100% {  -webkit-transform: translateY(0px); overflow: hidden; }
+0%{  -webkit-transform: translateY(-30%); overflow: hidden; opacity: 0.6; }
+100% {  -webkit-transform: translateY(0px); overflow: hidden; opacity: 0.6; }
 }
 
 @keyframes image_preview_move_right {
