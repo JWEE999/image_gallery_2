@@ -175,6 +175,9 @@ function showSlides(n) {
 	if(dots[i].style.animationName==="thumbnail-selection"){
 		dots[i].style.setProperty("animation", "thumbnail-deselection 0.5s forwards");
 	}
+	else{
+		dots[i].style.setProperty("animation", "");
+	}
 	//dots[i].className = dots[i].className.replace(" not_active", "");
     //dots[i].className = dots[i].className.replace(" active", " not_active");
   }
