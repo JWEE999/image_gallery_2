@@ -171,12 +171,18 @@ function showSlides(n) {
     slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
-	dots[i].className = dots[i].className.replace(" not_active", "");
-    dots[i].className = dots[i].className.replace(" active", " not_active");
+	  console.log(dots[i].style.animationName);
+	if(dots[i].style.animationName==="thumbnail-selection"){
+		dots[i].style.setProperty("animation", "thumbnail-deselection 0.5s forwards");
+	}
+	//dots[i].className = dots[i].className.replace(" not_active", "");
+    //dots[i].className = dots[i].className.replace(" active", " not_active");
   }
   slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className = dots[slideIndex-1].className.replace(" not_active", "");
-  dots[slideIndex-1].className += " active";
+  dots[slideIndex-1].style.animation = "";
+  dots[slideIndex-1].style.setProperty("animation", "thumbnail-selection 0.5s forwards");
+  //dots[slideIndex-1].className = dots[slideIndex-1].className.replace(" not_active", "");
+  //dots[slideIndex-1].className += " active";
   current_selected_image_idx = slideIndex;
   if (dots[slideIndex-1].getBoundingClientRect().right > window.innerWidth){
 	document.querySelector(".row_inner").scrollLeft += dots[slideIndex-1].offsetWidth;
