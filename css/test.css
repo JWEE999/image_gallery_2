@@ -248,7 +248,16 @@ img {
 }
 
 .not_active{
-	opacity: 0.6;
+	position: relative;
+	width: 21%;
+	height: 100%;
+	margin-left: 0.2%;
+	margin-right: 0.2%;
+	overflow: hidden;
+	border-radius: 10px;
+	display:inline-block;
+	vertical-align: top;
+	opacity:0.6;
 	animation: thumbnail-deselection 0.5s forwards;
 	-webkit-animation: thumbnail-deselection 0.5s forwards;
 }
