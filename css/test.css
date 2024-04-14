@@ -249,27 +249,26 @@ img {
 
 .not_active{
 	opacity: 0.6;
-	overflow: hidden;
 	animation: thumbnail-deselection 0.5s forwards;
 	-webkit-animation: thumbnail-deselection 0.5s forwards;
 }
 
 @keyframes thumbnail-selection {
-0%{  transform: translateY(0px);  }
-100% {  transform: translateY(-30%);  }
+0%{  transform: translateY(0px); overflow: hidden;  }
+100% {  transform: translateY(-30%); overflow: hidden; }
 }
 @-webkit-keyframes thumbnail-selection {
-0%{  -webkit-transform: translateY(0px);  }
-100% {  -webkit-transform: translateY(-30%);  }
+0%{  -webkit-transform: translateY(0px); overflow: hidden; }
+100% {  -webkit-transform: translateY(-30%); overflow: hidden; }
 }
 
 @keyframes thumbnail-deselection {
-0%{  transform: translateY(-30%);  }
-100% {  transform: translateY(0px);  }
+0%{  transform: translateY(-30%); overflow: hidden; }
+100% {  transform: translateY(0px); overflow: hidden; }
 }
 @-webkit-keyframes thumbnail-deselection {
-0%{  -webkit-transform: translateY(-30%);  }
-100% {  -webkit-transform: translateY(0px);  }
+0%{  -webkit-transform: translateY(-30%); overflow: hidden; }
+100% {  -webkit-transform: translateY(0px); overflow: hidden; }
 }
 
 @keyframes image_preview_move_right {
