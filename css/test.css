@@ -211,6 +211,7 @@ img {
 .column {
 	position: relative;
   width: 21%;
+  max-width: 200px;
   height: 100%;
   margin-left: 0.2%;
   margin-right: 0.2%;
