@@ -191,6 +191,8 @@ img {
 	height: 15%;
 	width: 100%;
 	bottom: 15%;
+	backface-visibility: hidden;
+	transform: translate3d(0,0,0);
 }
 
 .row_inner{
@@ -201,6 +203,8 @@ img {
 	padding-top: 10%;
 	white-space: nowrap;
 	overflow-x:auto;
+	backface-visibility: hidden;
+	transform: translate3d(0,0,0);
 }
 
 .row_inner::-webkit-scrollbar {
